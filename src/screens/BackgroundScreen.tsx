@@ -35,7 +35,6 @@ const BackgroundScreen = () => {
 const styles = StyleSheet.create({
   background: {
     position: "absolute",
-    zIndex: -1,
   },
   image: {
     height,
