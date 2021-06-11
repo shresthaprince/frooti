@@ -9,7 +9,7 @@ const fruitIcons = [
   "fruit-grapes",
 ];
 
-const PredictButton = ({ onPress }: any) => {
+const PredictButton = ({ onPress, loading }: any) => {
   const [fruitName, setFruitName] = useState<string>("fruit-cherries");
 
   useEffect(() => {
@@ -21,6 +21,7 @@ const PredictButton = ({ onPress }: any) => {
   }, []);
   return (
     <Button
+      disabled={loading}
       icon={fruitName}
       mode="contained"
       labelStyle={styles.btnText}
@@ -28,7 +29,7 @@ const PredictButton = ({ onPress }: any) => {
       //loading={true}
       onPress={onPress}
     >
-      Predict Fruit
+      {loading ? "Predicting..." : "Predict Fruit"}
     </Button>
   );
 };
